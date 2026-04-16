@@ -12,12 +12,12 @@ interface Props {
 }
 
 // Popular searches are example/demo data — labels are i18n'd
-const POPULAR_SEARCHES = [
-  "Cowboy in the alps",
-  "Chocolate tester for Lindt or Nestlé",
-  "Private banker",
-  "Emmental maker",
-];
+const POPULAR_SEARCH_KEYS = [
+  "jobTitle.modal.popular.1",
+  "jobTitle.modal.popular.2",
+  "jobTitle.modal.popular.3",
+  "jobTitle.modal.popular.4",
+] as const;
 
 export function JobTitleModal({ open, onClose, initialValue = "", onSelect }: Props) {
   const { t } = useI18n();
@@ -209,9 +209,11 @@ export function JobTitleModal({ open, onClose, initialValue = "", onSelect }: Pr
                 {t("jobTitle.modal.popularSearches")}
               </span>
               <div className="flex flex-col" style={{ gap: 8 }}>
-                {POPULAR_SEARCHES.map((search) => (
+                {POPULAR_SEARCH_KEYS.map((key) => {
+                  const search = t(key);
+                  return (
                   <button
-                    key={search}
+                    key={key}
                     onClick={() => handleSelect(search)}
                     className="flex items-center gap-3 w-full text-left rounded-full"
                     style={{ paddingTop: 12, paddingBottom: 12 }}
@@ -239,7 +241,8 @@ export function JobTitleModal({ open, onClose, initialValue = "", onSelect }: Pr
                       {search}
                     </span>
                   </button>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>

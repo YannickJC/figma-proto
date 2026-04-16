@@ -9,8 +9,8 @@ export function LocationLinks({
   locations: LocationLink[];
   title: string;
 }) {
-  const { locale } = useI18n();
-  const jobsLabel = locale === "de" ? "Stellen" : locale === "fr" ? "emplois" : "jobs";
+  const { t } = useI18n();
+  const jobsLabel = t("serp.jobsLabel");
 
   return (
     <div className="w-full rounded-[8px]">

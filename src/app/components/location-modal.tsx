@@ -91,6 +91,7 @@ interface TagProps {
 }
 
 function Tag({ label, onRemove }: TagProps) {
+  const { t } = useI18n();
   return (
     <div
       className="bg-white flex items-center gap-[8px] shrink-0 rounded-[8px]"
@@ -119,7 +120,7 @@ function Tag({ label, onRemove }: TagProps) {
         onClick={onRemove}
         className="flex items-center justify-center shrink-0"
         style={{ width: 16, height: 16 }}
-        aria-label={`Remove ${label}`}
+        aria-label={t("location.modal.remove").replace("{label}", label)}
       >
         <svg
           className="block size-full"

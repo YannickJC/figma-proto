@@ -30,7 +30,7 @@ function SkeletonGroup({ count }: { count: number }) {
 }
 
 export function SerpPage() {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const { isSearching, searchQuery, searchLocations, filters } = useOutletContext<{
     openSearch: () => void;
     isSearching: boolean;
@@ -83,19 +83,7 @@ export function SerpPage() {
     setVisibleExtra((prev) => prev + 10);
   }, []);
 
-  const seeMoreLabel =
-    locale === "de"
-      ? "Mehr Stellen anzeigen"
-      : locale === "fr"
-        ? "Voir plus d'emplois"
-        : "See more ads";
-
-  const locationTitle =
-    locale === "de"
-      ? "Die besten Kantone für Project Manager Jobs"
-      : locale === "fr"
-        ? "Les meilleurs cantons pour les emplois de Project Manager"
-        : "The best cantons to find Project Manager jobs";
+  const locationTitle = t("serp.locationTitle");
 
   return (
     <div className="flex flex-col w-full">
@@ -126,28 +114,7 @@ export function SerpPage() {
       {/* ===== SEO TEXT BLOCK ===== */}
       <div className="px-4 pb-4">
         <SeoTextBlock
-          text={
-            <>
-              147 jobs have been added this week for Project Manager. This role is in
-              high demand in{" "}
-              <span className="underline">banking & finance</span>,{" "}
-              <span className="underline">consulting</span>,{" "}
-              <span className="underline">
-                pharma & healthcare
-              </span>
-              . The majority of job opportunities can be found in the cantons of{" "}
-              <span className="underline">Zurich</span>,{" "}
-              <span className="underline">Bern</span>,{" "}
-              <span className="underline">Basel</span>, and{" "}
-              <span className="underline">Geneva</span>.{" "}
-              Top skills are{" "}
-              <span className="underline">Agile / Scrum</span>,{" "}
-              <span className="underline">Stakeholder management</span> and{" "}
-              <span className="underline">PMP certification</span>.
-              The average salary for Project Managers in Switzerland is CHF 115,000 per year,
-              with senior roles reaching up to CHF 160,000 in Zurich.
-            </>
-          }
+          text={t("serp.seoText")}
         />
       </div>
 
@@ -180,33 +147,32 @@ export function SerpPage() {
 
       {/* ===== MARKET INSIGHT BLOCK (383px fixed) ===== */}
       <div className="px-4 py-4">
-        <MarketInsight title="How much does a Project Manager earn in Switzerland?">
+        <MarketInsight title={t("serp.insight.salary.title")}>
           <p className="mb-2" style={{ lineHeight: "1.3" }}>
-            Project Manager salaries depend on experience, industry, and location.
+            {t("serp.insight.salary.text")}
           </p>
           <ul className="list-disc pl-5 space-y-1">
             <li>
               <span style={{ fontWeight: "var(--font-weight-semibold)" as any }}>
-                Junior Project Manager
+                {t("serp.insight.salary.junior")}
               </span>
               : Supports delivery planning, risk logs and reporting
             </li>
             <li>
               <span style={{ fontWeight: "var(--font-weight-semibold)" as any }}>
-                Project Manager
+                {t("serp.insight.salary.mid")}
               </span>
               : Owns full project lifecycle, budget and stakeholder management
             </li>
             <li>
               <span style={{ fontWeight: "var(--font-weight-semibold)" as any }}>
-                Senior PM / Programme Manager
+                {t("serp.insight.salary.senior")}
               </span>
               : Strategic portfolio oversight and C-level sponsorship
             </li>
           </ul>
           <p className="mt-2" style={{ lineHeight: "1.3" }}>
-            In Switzerland, Zurich and Geneva command the highest salaries, especially
-            in banking, consulting and pharma.
+            {t("serp.insight.salary.footer")}
           </p>
         </MarketInsight>
       </div>
@@ -252,7 +218,7 @@ export function SerpPage() {
               whiteSpace: "nowrap",
             }}
           >
-            See more
+            {t("serp.seeMore")}
           </span>
           {/* Border overlay */}
           <div
@@ -271,25 +237,17 @@ export function SerpPage() {
 
       {/* ===== ADDITIONAL MARKET INSIGHT BLOCKS (2) ===== */}
       <div className="px-4 py-2">
-        <MarketInsight title="Top industries hiring Project Managers">
+        <MarketInsight title={t("serp.insight.industries.title")}>
           <p style={{ lineHeight: "1.3" }}>
-            Project Managers are in high demand across multiple sectors. The banking
-            and finance industry leads hiring, followed by consulting and healthcare.
-            E-commerce platforms and SaaS companies are also rapidly expanding their
-            project management teams. In Switzerland, the fintech and pharma sectors
-            offer particularly competitive packages.
+            {t("serp.insight.industries.text")}
           </p>
         </MarketInsight>
       </div>
 
       <div className="px-4 py-2 mb-4">
-        <MarketInsight title="Essential skills for Project Managers in 2026">
+        <MarketInsight title={t("serp.insight.skills.title")}>
           <p style={{ lineHeight: "1.3" }}>
-            The most sought-after skills include proficiency in Agile/Scrum, stakeholder
-            management, PMP certification, and data-driven decision-making. Knowledge
-            of project management software and tools, such as Microsoft Project and
-            Jira, is also highly valued. Leadership and communication skills are
-            crucial for success in this role.
+            {t("serp.insight.skills.text")}
           </p>
         </MarketInsight>
       </div>

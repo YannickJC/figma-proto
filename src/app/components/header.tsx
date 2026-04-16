@@ -1,10 +1,12 @@
 import { List, User } from "@phosphor-icons/react";
+import { useI18n } from "../i18n/i18n-context";
 
 interface HeaderProps {
   onMenuOpen: () => void;
 }
 
 export function Header({ onMenuOpen }: HeaderProps) {
+  const { t } = useI18n();
   return (
     <header
       className="sticky top-0 z-40 bg-background"
@@ -23,7 +25,7 @@ export function Header({ onMenuOpen }: HeaderProps) {
         {/* Left: Hamburger */}
         <button
           onClick={onMenuOpen}
-          aria-label="Open menu"
+          aria-label={t("header.openMenu")}
           className="flex items-center justify-center rounded-[12px] shrink-0"
           style={{ width: 40, height: 40 }}
         >
@@ -72,7 +74,7 @@ export function Header({ onMenuOpen }: HeaderProps) {
 
         {/* Right: User icon */}
         <button
-          aria-label="Account"
+          aria-label={t("header.account")}
           className="flex items-center justify-center rounded-[12px] shrink-0"
           style={{ width: 40, height: 40 }}
         >

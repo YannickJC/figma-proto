@@ -166,17 +166,17 @@ function Divider() {
 }
 
 // ─── Footer Links ─────────────────────────────────────────────────────────────
-const LINKS = [
-  { key: "terms", label: "Terms of Use", href: "#" },
-  { key: "privacy", label: "Data privacy notice", href: "#" },
-  { key: "legal", label: "Legal notice", href: "#" },
-  { key: "cookies", label: "Cookie settings", href: "#" },
-  { key: "contact", label: "Contact", href: "#" },
+const LINK_KEYS = [
+  { key: "terms", translationKey: "footer.termsOfUse" as const, href: "#" },
+  { key: "privacy", translationKey: "footer.dataPrivacy" as const, href: "#" },
+  { key: "legal", translationKey: "footer.legalNotice" as const, href: "#" },
+  { key: "cookies", translationKey: "footer.cookieSettings" as const, href: "#" },
+  { key: "contact", translationKey: "footer.contact" as const, href: "#" },
 ];
 
 // ─── Main Export ──────────────────────────────────────────────────────────────
 export function SerpFooter() {
-  const { locale, setLocale, locales } = useI18n();
+  const { t, locale, setLocale, locales } = useI18n();
   const [themeOpen, setThemeOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
 
@@ -233,17 +233,17 @@ export function SerpFooter() {
           <div style={{ position: "relative" }}>
             <IconButton
               icon={<CircleHalf size={20} weight="fill" style={{ color: "var(--foreground)", flexShrink: 0 }} />}
-              label="Change theme"
+              label={t("footer.changeTheme")}
               onClick={() => { setThemeOpen((v) => !v); setLangOpen(false); }}
             />
             <Dropdown open={themeOpen} onClose={() => setThemeOpen(false)}>
               <DropdownOption
-                label="Light"
+                label={t("footer.themeLight")}
                 selected={theme === "light"}
                 onClick={() => applyTheme("light")}
               />
               <DropdownOption
-                label="Dark"
+                label={t("footer.themeDark")}
                 selected={theme === "dark"}
                 onClick={() => applyTheme("dark")}
               />
@@ -286,7 +286,7 @@ export function SerpFooter() {
             width: "100%",
           }}
         >
-          {LINKS.map((link) => (
+          {LINK_KEYS.map((link) => (
             <a
               key={link.key}
               href={link.href}
@@ -300,14 +300,14 @@ export function SerpFooter() {
                 textDecoration: "none",
                 fontFamily: "var(--font-geist)",
                 fontSize: "14px",
-                fontWeight: "var(--font-weight-regular)" as any,
+                fontWeight: "var(--font-weight-regular)",
                 lineHeight: "1.3",
                 color: "var(--foreground)",
                 whiteSpace: "nowrap",
               }}
               className="hover:bg-border transition-colors"
             >
-              {link.label}
+              {t(link.translationKey)}
             </a>
           ))}
         </div>
@@ -333,7 +333,7 @@ export function SerpFooter() {
               whiteSpace: "nowrap",
             }}
           >
-            © 2026 JobCloud AG
+            {t("footer.copyright")}
           </span>
         </div>
       </div>

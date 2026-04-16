@@ -119,7 +119,45 @@ export type TranslationKey =
   | "job.detail.offersOnline"
   | "saved.subtitle"
   | "saved.empty.title"
-  | "saved.empty.description";
+  | "saved.empty.description"
+  | "header.openMenu"
+  | "header.account"
+  | "nav.breadcrumb"
+  | "jobTitle.modal.popular.1"
+  | "jobTitle.modal.popular.2"
+  | "jobTitle.modal.popular.3"
+  | "jobTitle.modal.popular.4"
+  | "job.detail.hybrid"
+  | "job.detail.mapAlt"
+  | "job.detail.writeEmail"
+  | "serp.careerInsights"
+  | "seo.showMore"
+  | "seo.showLess"
+  | "serp.relatedSearches"
+  | "serp.seeMoreAds"
+  | "serp.locationTitle"
+  | "serp.seoText"
+  | "serp.insight.salary.title"
+  | "serp.insight.salary.text"
+  | "serp.insight.salary.junior"
+  | "serp.insight.salary.mid"
+  | "serp.insight.salary.senior"
+  | "serp.insight.salary.footer"
+  | "serp.insight.industries.title"
+  | "serp.insight.industries.text"
+  | "serp.insight.skills.title"
+  | "serp.insight.skills.text"
+  | "footer.termsOfUse"
+  | "footer.dataPrivacy"
+  | "footer.legalNotice"
+  | "footer.cookieSettings"
+  | "footer.contact"
+  | "footer.themeLight"
+  | "footer.themeDark"
+  | "footer.changeTheme"
+  | "footer.copyright"
+  | "location.modal.remove"
+  | "serp.jobsLabel";
 
 type Translations = Record<Locale, Record<TranslationKey, string>>;
 
@@ -244,6 +282,44 @@ export const translations: Translations = {
     "saved.subtitle": "{count} saved jobs",
     "saved.empty.title": "No saved jobs yet",
     "saved.empty.description": "Tap the heart icon on any job to save it here for later.",
+    "header.openMenu": "Open menu",
+    "header.account": "Account",
+    "nav.breadcrumb": "Breadcrumb",
+    "jobTitle.modal.popular.1": "Cowboy in the alps",
+    "jobTitle.modal.popular.2": "Chocolate tester for Lindt or Nestlé",
+    "jobTitle.modal.popular.3": "Private banker",
+    "jobTitle.modal.popular.4": "Emmental maker",
+    "job.detail.hybrid": "Hybrid",
+    "job.detail.mapAlt": "Map",
+    "job.detail.writeEmail": "Write an email",
+    "serp.careerInsights": "Career insights",
+    "seo.showMore": "Show more",
+    "seo.showLess": "Show less",
+    "serp.relatedSearches": "Related searches",
+    "serp.seeMoreAds": "See more ads",
+    "serp.locationTitle": "The best cantons to find Project Manager jobs",
+    "serp.seoText": "147 jobs have been added this week for Project Manager. This role is in high demand in banking & finance, consulting, pharma & healthcare. The majority of job opportunities can be found in the cantons of Zurich, Bern, Basel, and Geneva. Top skills are Agile / Scrum, Stakeholder management and PMP certification. The average salary for Project Managers in Switzerland is CHF 115,000 per year, with senior roles reaching up to CHF 160,000 in Zurich.",
+    "serp.insight.salary.title": "How much does a Project Manager earn in Switzerland?",
+    "serp.insight.salary.text": "Project Manager salaries depend on experience, industry, and location.",
+    "serp.insight.salary.junior": "Junior Project Manager",
+    "serp.insight.salary.mid": "Project Manager",
+    "serp.insight.salary.senior": "Senior PM / Programme Manager",
+    "serp.insight.salary.footer": "In Switzerland, Zurich and Geneva command the highest salaries, especially in banking, consulting and pharma.",
+    "serp.insight.industries.title": "Top industries hiring Project Managers",
+    "serp.insight.industries.text": "Project Managers are in high demand across multiple sectors. The banking and finance industry leads hiring, followed by consulting and healthcare. E-commerce platforms and SaaS companies are also rapidly expanding their project management teams. In Switzerland, the fintech and pharma sectors offer particularly competitive packages.",
+    "serp.insight.skills.title": "Essential skills for Project Managers in 2026",
+    "serp.insight.skills.text": "The most sought-after skills include proficiency in Agile/Scrum, stakeholder management, PMP certification, and data-driven decision-making. Knowledge of project management software and tools, such as Microsoft Project and Jira, is also highly valued. Leadership and communication skills are crucial for success in this role.",
+    "footer.termsOfUse": "Terms of Use",
+    "footer.dataPrivacy": "Data privacy notice",
+    "footer.legalNotice": "Legal notice",
+    "footer.cookieSettings": "Cookie settings",
+    "footer.contact": "Contact",
+    "footer.themeLight": "Light",
+    "footer.themeDark": "Dark",
+    "footer.changeTheme": "Change theme",
+    "footer.copyright": "© 2026 JobCloud AG",
+    "location.modal.remove": "Remove {label}",
+    "serp.jobsLabel": "jobs",
   },
   fr: {
     "app.name": "JobScout24",
@@ -365,6 +441,44 @@ export const translations: Translations = {
     "saved.subtitle": "{count} emplois sauvegardés",
     "saved.empty.title": "Aucun emploi sauvegardé",
     "saved.empty.description": "Appuyez sur l'icône cœur sur une offre pour la sauvegarder ici.",
+    "header.openMenu": "Ouvrir le menu",
+    "header.account": "Compte",
+    "nav.breadcrumb": "Fil d'Ariane",
+    "jobTitle.modal.popular.1": "Cow-boy dans les alpes",
+    "jobTitle.modal.popular.2": "Testeur de chocolat pour Lindt ou Nestlé",
+    "jobTitle.modal.popular.3": "Banquier privé",
+    "jobTitle.modal.popular.4": "Fabricant d'emmental",
+    "job.detail.hybrid": "Hybride",
+    "job.detail.mapAlt": "Carte",
+    "job.detail.writeEmail": "Écrire un e-mail",
+    "serp.careerInsights": "Insights carrière",
+    "seo.showMore": "Voir plus",
+    "seo.showLess": "Voir moins",
+    "serp.relatedSearches": "Recherches similaires",
+    "serp.seeMoreAds": "Voir plus d'emplois",
+    "serp.locationTitle": "Les meilleurs cantons pour les emplois de Project Manager",
+    "serp.seoText": "147 offres ont été ajoutées cette semaine pour Project Manager. Ce poste est très demandé dans la banque & finance, le conseil, la pharma & santé. La majorité des opportunités se trouvent dans les cantons de Zurich, Berne, Bâle et Genève. Les compétences clés sont Agile / Scrum, gestion des parties prenantes et certification PMP. Le salaire moyen des Project Managers en Suisse est de CHF 115 000 par an, les postes seniors atteignant jusqu'à CHF 160 000 à Zurich.",
+    "serp.insight.salary.title": "Combien gagne un Project Manager en Suisse ?",
+    "serp.insight.salary.text": "Les salaires des Project Managers dépendent de l'expérience, du secteur et du lieu.",
+    "serp.insight.salary.junior": "Junior Project Manager",
+    "serp.insight.salary.mid": "Project Manager",
+    "serp.insight.salary.senior": "Senior PM / Programme Manager",
+    "serp.insight.salary.footer": "En Suisse, Zurich et Genève offrent les salaires les plus élevés, notamment dans la banque, le conseil et la pharma.",
+    "serp.insight.industries.title": "Les secteurs qui recrutent le plus de Project Managers",
+    "serp.insight.industries.text": "Les Project Managers sont très demandés dans de nombreux secteurs. L'industrie bancaire et financière est en tête, suivie du conseil et de la santé. Les plateformes e-commerce et les entreprises SaaS développent également rapidement leurs équipes de gestion de projet. En Suisse, les secteurs fintech et pharma offrent des packages particulièrement compétitifs.",
+    "serp.insight.skills.title": "Compétences essentielles pour les Project Managers en 2026",
+    "serp.insight.skills.text": "Les compétences les plus recherchées incluent la maîtrise d'Agile/Scrum, la gestion des parties prenantes, la certification PMP et la prise de décision basée sur les données. La connaissance des logiciels de gestion de projet comme Microsoft Project et Jira est également très appréciée. Le leadership et les compétences en communication sont essentiels.",
+    "footer.termsOfUse": "Conditions d'utilisation",
+    "footer.dataPrivacy": "Protection des données",
+    "footer.legalNotice": "Mentions légales",
+    "footer.cookieSettings": "Paramètres des cookies",
+    "footer.contact": "Contact",
+    "footer.themeLight": "Clair",
+    "footer.themeDark": "Sombre",
+    "footer.changeTheme": "Changer le thème",
+    "footer.copyright": "© 2026 JobCloud AG",
+    "location.modal.remove": "Supprimer {label}",
+    "serp.jobsLabel": "emplois",
   },
   de: {
     "app.name": "JobScout24",
@@ -486,5 +600,43 @@ export const translations: Translations = {
     "saved.subtitle": "{count} gespeicherte Stellen",
     "saved.empty.title": "Keine gespeicherten Stellen",
     "saved.empty.description": "Tippen Sie auf das Herz-Symbol bei einer Stelle, um sie hier zu speichern.",
+    "header.openMenu": "Menü öffnen",
+    "header.account": "Konto",
+    "nav.breadcrumb": "Brotkrümel-Navigation",
+    "jobTitle.modal.popular.1": "Cowboy in den Alpen",
+    "jobTitle.modal.popular.2": "Schokoladentester für Lindt oder Nestlé",
+    "jobTitle.modal.popular.3": "Privatbankier",
+    "jobTitle.modal.popular.4": "Emmentaler-Hersteller",
+    "job.detail.hybrid": "Hybrid",
+    "job.detail.mapAlt": "Karte",
+    "job.detail.writeEmail": "E-Mail schreiben",
+    "serp.careerInsights": "Karriere-Insights",
+    "seo.showMore": "Mehr anzeigen",
+    "seo.showLess": "Weniger",
+    "serp.relatedSearches": "Ähnliche Suchanfragen",
+    "serp.seeMoreAds": "Mehr Stellen anzeigen",
+    "serp.locationTitle": "Die besten Kantone für Project Manager Jobs",
+    "serp.seoText": "Diese Woche wurden 147 Stellen für Project Manager hinzugefügt. Diese Rolle ist besonders gefragt in Banking & Finance, Beratung, Pharma & Gesundheit. Die meisten Stellenangebote finden sich in den Kantonen Zürich, Bern, Basel und Genf. Gefragte Kompetenzen sind Agile / Scrum, Stakeholder-Management und PMP-Zertifizierung. Das Durchschnittsgehalt für Project Manager in der Schweiz beträgt CHF 115'000 pro Jahr, Senior-Positionen erreichen bis zu CHF 160'000 in Zürich.",
+    "serp.insight.salary.title": "Wie viel verdient ein Project Manager in der Schweiz?",
+    "serp.insight.salary.text": "Die Gehälter von Project Managern hängen von Erfahrung, Branche und Standort ab.",
+    "serp.insight.salary.junior": "Junior Project Manager",
+    "serp.insight.salary.mid": "Project Manager",
+    "serp.insight.salary.senior": "Senior PM / Programme Manager",
+    "serp.insight.salary.footer": "In der Schweiz bieten Zürich und Genf die höchsten Gehälter, insbesondere in Banking, Beratung und Pharma.",
+    "serp.insight.industries.title": "Top-Branchen, die Project Manager einstellen",
+    "serp.insight.industries.text": "Project Manager sind in vielen Branchen sehr gefragt. Die Bank- und Finanzbranche führt bei der Einstellung, gefolgt von Beratung und Gesundheitswesen. E-Commerce-Plattformen und SaaS-Unternehmen bauen ebenfalls ihre Projektmanagement-Teams schnell aus. In der Schweiz bieten die Fintech- und Pharma-Sektoren besonders wettbewerbsfähige Pakete.",
+    "serp.insight.skills.title": "Wesentliche Fähigkeiten für Project Manager in 2026",
+    "serp.insight.skills.text": "Die gefragtesten Fähigkeiten umfassen Agile/Scrum, Stakeholder-Management, PMP-Zertifizierung und datenbasierte Entscheidungsfindung. Kenntnisse in Projektmanagement-Software wie Microsoft Project und Jira sind ebenfalls sehr geschätzt. Führungs- und Kommunikationsfähigkeiten sind entscheidend für den Erfolg.",
+    "footer.termsOfUse": "Nutzungsbedingungen",
+    "footer.dataPrivacy": "Datenschutzhinweise",
+    "footer.legalNotice": "Impressum",
+    "footer.cookieSettings": "Cookie-Einstellungen",
+    "footer.contact": "Kontakt",
+    "footer.themeLight": "Hell",
+    "footer.themeDark": "Dunkel",
+    "footer.changeTheme": "Thema ändern",
+    "footer.copyright": "© 2026 JobCloud AG",
+    "location.modal.remove": "{label} entfernen",
+    "serp.jobsLabel": "Stellen",
   },
 };

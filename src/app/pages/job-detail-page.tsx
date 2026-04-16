@@ -128,8 +128,9 @@ function BenefitIcon({ iconName }: { iconName: string }) {
 
 // ── Breadcrumb bar ───────────────────────────────────────────────────────────
 function BreadcrumbBar({ job }: { job: JobAd }) {
+  const { t } = useI18n();
   const crumbs = [
-    { label: "Jobs", href: "/app/jobs" },
+     { label: t("nav.jobs"), href: "/app/jobs" },
     { label: "Project Manager", href: "/app/jobs" },
     { label: job.locations[0], href: "/app/jobs" },
     { label: job.companyName, href: "#" },
@@ -167,7 +168,7 @@ function BreadcrumbBar({ job }: { job: JobAd }) {
 }
 
 // ── Job header (avatar + name + more button) ─────────────────────────────────
-function JobHeader({ job }: { job: JobAd; detail: JobDetailData }) {
+function JobHeader({ job, t }: { job: JobAd; detail: JobDetailData; t: (key: any) => string }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 8, width: "100%" }}>
       {/* Avatar */}
@@ -203,7 +204,7 @@ function JobHeader({ job }: { job: JobAd; detail: JobDetailData }) {
       </div>
       {/* More options button */}
       <button
-        aria-label="More options"
+        aria-label={t("job.detail.moreOptions")}
         style={{
           width: 40,
           height: 40,
@@ -468,7 +469,7 @@ function WorkLocationSection({ job, detail, t }: { job: JobAd; detail: JobDetail
             <span style={{ fontFamily: "var(--font-geist)", fontSize: 16, color: "var(--foreground)", lineHeight: 1.3 }}>
               {detail.homeofficeDays}
             </span>
-            <SparkleTag label="Hybrid" />
+            <SparkleTag label={t("job.detail.hybrid")} />
           </div>
         </div>
       </div>
@@ -509,7 +510,7 @@ function WorkLocationSection({ job, detail, t }: { job: JobAd; detail: JobDetail
       >
         <img
           src={MAP_IMAGE}
-          alt="Map"
+          alt={t("job.detail.mapAlt")}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
       </div>
@@ -818,7 +819,7 @@ function DescriptionSection({ detail, t }: { detail: JobDetailData; t: (key: any
                   cursor: "pointer",
                 }}
               >
-                Write an email
+                {t("job.detail.writeEmail")}
               </span>
             </div>
           </div>
@@ -1315,7 +1316,7 @@ export function JobDetailPage() {
         }}
       >
         {/* Job header */}
-        <JobHeader job={job} detail={detail} />
+        <JobHeader job={job} detail={detail} t={t} />
 
         {/* Job title */}
         <JobTitle title={job.jobTitle} />

@@ -1,4 +1,5 @@
 import { PresentationChart } from "@phosphor-icons/react";
+import { useI18n } from "../../i18n/i18n-context";
 
 interface MarketInsightProps {
   title: string;
@@ -6,6 +7,7 @@ interface MarketInsightProps {
 }
 
 export function MarketInsight({ title, children }: MarketInsightProps) {
+  const { t } = useI18n();
   return (
     <div
       className="w-full rounded-[var(--radius-card)] overflow-hidden"
@@ -31,7 +33,7 @@ export function MarketInsight({ title, children }: MarketInsightProps) {
               color: "var(--insight-tag-color)",
             }}
           >
-            Career insights
+            {t("serp.careerInsights")}
           </span>
         </div>
 

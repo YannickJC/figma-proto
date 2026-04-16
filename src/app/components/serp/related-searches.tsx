@@ -2,13 +2,8 @@ import { MagnifyingGlass } from "@phosphor-icons/react";
 import { useI18n } from "../../i18n/i18n-context";
 
 export function RelatedSearches({ queries }: { queries: string[] }) {
-  const { locale } = useI18n();
-  const title =
-    locale === "de"
-      ? "Ähnliche Suchanfragen"
-      : locale === "fr"
-        ? "Recherches similaires"
-        : "Related searches";
+  const { t } = useI18n();
+  const title = t("serp.relatedSearches");
 
   return (
     <div className="w-full px-4 py-4">

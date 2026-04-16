@@ -8,10 +8,10 @@ interface SeoTextBlockProps {
 
 export function SeoTextBlock({ text, maxLines = 6 }: SeoTextBlockProps) {
   const [expanded, setExpanded] = useState(false);
-  const { locale } = useI18n();
+  const { t } = useI18n();
 
-  const showMoreLabel = locale === "de" ? "Mehr anzeigen" : locale === "fr" ? "Voir plus" : "Show more";
-  const showLessLabel = locale === "de" ? "Weniger" : locale === "fr" ? "Voir moins" : "Show less";
+  const showMoreLabel = t("seo.showMore");
+  const showLessLabel = t("seo.showLess");
 
   return (
     <div className="w-full">

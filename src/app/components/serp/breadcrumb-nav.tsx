@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { useI18n } from "../../i18n/i18n-context";
 
 interface BreadcrumbItem {
   label: string;
@@ -6,10 +7,11 @@ interface BreadcrumbItem {
 }
 
 export function BreadcrumbNav({ items }: { items: BreadcrumbItem[] }) {
+  const { t } = useI18n();
   return (
     <nav
       className="flex gap-[4px] h-[44px] items-center"
-      aria-label="Breadcrumb"
+      aria-label={t("nav.breadcrumb")}
     >
       {items.map((item, i) => (
         <div key={i} className="flex items-center gap-[4px]">
