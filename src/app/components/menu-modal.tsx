@@ -10,7 +10,7 @@
 import { X, Sparkle, MagnifyingGlass, Heart, Users, PresentationChart, Briefcase, ArrowUpRight, Globe } from "@phosphor-icons/react";
 import { useI18n } from "../i18n/i18n-context";
 import { AnimatePresence, motion } from "motion/react";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import type { Locale } from "../i18n/translations";
 
 interface Props {
@@ -118,11 +118,15 @@ function Divider() {
 export function MenuModal({ open, onClose }: Props) {
   const { t, locale, setLocale, locales } = useI18n();
   const location = useLocation();
+  const navigate = useNavigate();
 
   // "Find jobs" is active on SERP (/app, /app/jobs) and job detail (/app/jobs/:id)
   const isFindJobsActive =
     location.pathname === "/app" ||
     location.pathname.startsWith("/app/jobs");
+
+  // "Saved jobs" is active on saved jobs page
+  const isSavedJobsActive = location.pathname === "/app/saved-jobs";
 
   // Locale label for current language
   const currentLocaleLabel = locales.find((l) => l.code === locale)?.label ?? locale.toUpperCase();
@@ -130,7 +134,7 @@ export function MenuModal({ open, onClose }: Props) {
   const primaryNavItems: (NavItemProps & { key: string })[] = [
     { key: "forYou", icon: <Sparkle size={20} weight="regular" />, label: t("nav.forYou") },
     { key: "findJobs", icon: <MagnifyingGlass size={20} weight="regular" />, label: t("nav.findJobs"), active: isFindJobsActive },
-    { key: "savedJobs", icon: <Heart size={20} weight="regular" />, label: t("nav.savedJobs") },
+    { key: "savedJobs", icon: <Heart size={20} weight="regular" />, label: t("nav.savedJobs"), active: isSavedJobsActive, onClick: () => { navigate("/app/saved-jobs"); onClose(); } },
     { key: "referrals", icon: <Users size={20} weight="regular" />, label: t("nav.referrals") },
     { key: "careerInsights", icon: <PresentationChart size={20} weight="regular" />, label: t("nav.careerInsights") },
   ];
@@ -191,7 +195,7 @@ export function MenuModal({ open, onClose }: Props) {
                       icon={item.icon}
                       label={item.label}
                       active={item.active}
-                      onClick={onClose}
+                      onClick={item.onClick ?? onClose}
                     />
                   ))}
                 </div>

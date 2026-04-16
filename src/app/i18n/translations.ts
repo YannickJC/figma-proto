@@ -116,7 +116,10 @@ export type TranslationKey =
   | "job.detail.similarJobs"
   | "job.detail.careerInsightsTag"
   | "job.detail.moreOptions"
-  | "job.detail.offersOnline";
+  | "job.detail.offersOnline"
+  | "saved.subtitle"
+  | "saved.empty.title"
+  | "saved.empty.description";
 
 type Translations = Record<Locale, Record<TranslationKey, string>>;
 
@@ -238,6 +241,9 @@ export const translations: Translations = {
     "job.detail.careerInsightsTag": "Career insights",
     "job.detail.moreOptions": "More options",
     "job.detail.offersOnline": "{count} offers online",
+    "saved.subtitle": "{count} saved jobs",
+    "saved.empty.title": "No saved jobs yet",
+    "saved.empty.description": "Tap the heart icon on any job to save it here for later.",
   },
   fr: {
     "app.name": "JobScout24",
@@ -356,6 +362,9 @@ export const translations: Translations = {
     "job.detail.careerInsightsTag": "Insights carri\u00e8re",
     "job.detail.moreOptions": "Plus d\u2019options",
     "job.detail.offersOnline": "{count} offres en ligne",
+    "saved.subtitle": "{count} emplois sauvegardés",
+    "saved.empty.title": "Aucun emploi sauvegardé",
+    "saved.empty.description": "Appuyez sur l'icône cœur sur une offre pour la sauvegarder ici.",
   },
   de: {
     "app.name": "JobScout24",
@@ -474,5 +483,8 @@ export const translations: Translations = {
     "job.detail.careerInsightsTag": "Karriere-Insights",
     "job.detail.moreOptions": "Mehr Optionen",
     "job.detail.offersOnline": "{count} Angebote online",
+    "saved.subtitle": "{count} gespeicherte Stellen",
+    "saved.empty.title": "Keine gespeicherten Stellen",
+    "saved.empty.description": "Tippen Sie auf das Herz-Symbol bei einer Stelle, um sie hier zu speichern.",
   },
 };
